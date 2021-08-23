@@ -8,14 +8,14 @@ export default function CountriesList(props) {
       <ul style={{ overflow: 'scroll', height: '100vh' }}>
         {props.countries.map((country) => {
           return (
-            <>
-              <li>
-                <img
-                  src={`https://www.countryflags.io/${country.cca2}/flat/64.png`}
-                />
-                <Link to={`/${country.cca3}`}>{country.name.official}</Link>
-              </li>
-            </>
+            <li>
+              <img
+                className="flag"
+                src={country.flag}
+              />
+              &nbsp;
+              <Link to={`/${country.alpha3Code}`}>{country.name}</Link>
+            </li>
           );
         })}
       </ul>
